@@ -7,5 +7,5 @@ class DistanceMeter
 {
 public:
     DistanceMeter(int echo_pin, int trigger_pin);
-    uint16_t get_distance() const;
+    virtual uint16_t get_distance() const;
 };

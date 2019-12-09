@@ -11,7 +11,6 @@ RangeGuide::RangeGuide(ParkingSignal *parking_signal, uint16_t target_distance, 
     _target_threshold_distance(target_threshold_distance),
     _closeness_threshold_distance(closeness_threshold_distance)
 {
-
 }
 
 static uint16_t calc_distance(uint16_t target, uint16_t value)

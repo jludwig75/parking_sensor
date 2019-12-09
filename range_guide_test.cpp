@@ -16,6 +16,13 @@ TEST_CASE( "Parking Signal state set correctly", "[RangeGuide]" ) {
     const uint16_t closeness_threshold_distance = 30;
     RangeGuide range_guide(&parking_signal, target_distance, target_threshold_distance, closeness_threshold_distance);
 
+    SECTION("No measurment") {
+        range_guide.on_distance_changed(NO_MEASUREMENT_DISTANCE);
+
+        REQUIRE(parking_signal.get_closeness() == ParkingSignal::NoMeasurement);
+        REQUIRE(parking_signal.get_range_state() == ParkingSignal::OutOfRange);
+    }
+
     SECTION("Too far, not in range") {
         range_guide.on_distance_changed(200);
 

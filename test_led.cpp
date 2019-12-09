@@ -11,7 +11,7 @@ SignalLED::SignalLED(int led_pin) :
 
 void SignalLED::on_loop()
 {
-
+    LEDBank::instance().on_loop(_led_pin);
 }
 
 void SignalLED::set_led_state(LEDState state)
