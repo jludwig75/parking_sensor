@@ -22,8 +22,19 @@ add_executable(range_guide_test
                 parking_signal.cpp
                 test_led.cpp
                 led_bank.cpp
-                range_guide.cpp
                 )
 target_include_directories(range_guide_test PUBLIC
+                           "${PROJECT_SOURCE_DIR}/Catch2/single_include/catch2"
+                           )
+
+# RangeGuide and ParkingSignal Integration Test
+add_executable(range_guide_parking_signal_test
+                range_guide_parking_signal_test.cpp
+                range_guide.cpp
+                parking_signal.cpp
+                test_led.cpp
+                led_bank.cpp
+                )
+target_include_directories(range_guide_parking_signal_test PUBLIC
                            "${PROJECT_SOURCE_DIR}/Catch2/single_include/catch2"
                            )

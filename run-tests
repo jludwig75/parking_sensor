@@ -1,3 +1,4 @@
 #!/bin/sh
 ./parking_signal_test
 ./range_guide_test
+./range_guide_parking_signal_test
