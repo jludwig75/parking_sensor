@@ -13,6 +13,7 @@ public:
 
     enum Closeness {
         NoMeasurement,
+        AtTarget,
         TooFar,
         TooClose
     };
@@ -28,5 +29,5 @@ public:
 private:
     SignalLED _red_led;
     SignalLED _green_led;
-    SignalLED _blue_lde;
+    SignalLED _blue_led;
 };

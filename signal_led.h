@@ -6,6 +6,8 @@ class SignalLED
 public:
     SignalLED(int led_pin);
 
+    void on_loop();
+
     enum LEDState
     {
         Off,

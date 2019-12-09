@@ -6,7 +6,12 @@
 SignalLED::SignalLED(int led_pin) :
     _led_pin(led_pin)
 {
-    LEDBank::instance().set_led_state(_led_pin, LEDBank::LEDState::Off);
+    LEDBank::instance().set_led_state(_led_pin, LEDBank::Off);
+}
+
+void SignalLED::on_loop()
+{
+
 }
 
 void SignalLED::set_led_state(LEDState state)
@@ -14,13 +19,13 @@ void SignalLED::set_led_state(LEDState state)
     switch(state)
     {
         case Off:
-            LEDBank::instance().set_led_state(_led_pin, LEDBank::LEDState::Off);
+            LEDBank::instance().set_led_state(_led_pin, LEDBank::Off);
             break;
         case On:
-            LEDBank::instance().set_led_state(_led_pin, LEDBank::LEDState::On);
+            LEDBank::instance().set_led_state(_led_pin, LEDBank::On);
             break;
         case Flashing:
-            LEDBank::instance().set_led_state(_led_pin, LEDBank::LEDState::Flashing);
+            LEDBank::instance().set_led_state(_led_pin, LEDBank::Flashing);
             break;
     }
 }
