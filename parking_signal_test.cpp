@@ -5,7 +5,7 @@
 #include "led_bank.h"
 
 
-TEST_CASE( "Factorials are computed", "[factorial]" ) {
+TEST_CASE( "Signal LED's are set correctly", "[ParkingSignal]" ) {
     const int red_led_pin = 10;
     const int green_led_pin = 11;
     const int blue_led_pin = 12;

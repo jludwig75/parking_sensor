@@ -9,7 +9,7 @@ class ParkingSignal
 public:
     ParkingSignal(int red_pin, int green_pin, int blue_pin);
 
-    void on_loop();
+    virtual void on_loop();
 
     enum Closeness {
         NoMeasurement,
@@ -24,7 +24,7 @@ public:
         InRange
     };
 
-    void on_range_status(Closeness closeness, RangeState range_state);
+    virtual void on_range_status(Closeness closeness, RangeState range_state);
 
 private:
     SignalLED _red_led;
