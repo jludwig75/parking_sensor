@@ -1,9 +1,15 @@
 #include "signal_led.h"
-
+#include "wifi.h"
+#include "ota.h"
 
 #define RED_LED_PIN     3
 #define GREEN_LED_PIN   4
 #define BLUE_LED_PIN    5
+
+#define WIFI_SSID   ""
+#define WIFI_PASSWD ""
+
+#define HOST_NAME   "parking_sensor.local"
 
 #define STATE_TEST_DURATION_SEC 3
 #define NUM_LEDS          3
@@ -20,13 +26,18 @@ const char *led_colors[NUM_LEDS];
 void setup()
 {
   Serial.begin(115200);
+  connect_to_wifi(WIFI_SSID, WIFI_PASSWD, HOST_NAME);
+  ota_setup();
+
   red_led.begin();
   signal_leds[0] = &red_led;
   led_colors[0] = "red";
 
+  green_led.begin();
   signal_leds[1] = &green_led;
   led_colors[1] = "green";
 
+  blue_led.begin();
   signal_leds[2] = &blue_led;
   led_colors[2] = "blue";
 }
@@ -35,6 +46,7 @@ unsigned current_global_test_number = 0xFFFF;
 
 void loop()
 {
+  ota_on_loop();
   red_led.on_loop();
   unsigned global_test_number = (millis() / (STATE_TEST_DURATION_SEC * 1000)) % NUM_TESTS;
 
