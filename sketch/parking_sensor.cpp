@@ -13,6 +13,12 @@ ParkingSensor::ParkingSensor(DistanceMeter *distance_meter, ParkingSignal *parki
 
 }
 
+void ParkingSensor::begin()
+{
+    _distance_meter->begin();
+    _parking_signal->begin();
+}
+
 void ParkingSensor::on_loop()
 {
     uint16_t distance = _distance_meter->get_distance();

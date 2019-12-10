@@ -8,6 +8,10 @@ TestDistanceMeter::TestDistanceMeter(int echo_pin, int trigger_pin) :
 
 }
 
+void TestDistanceMeter::begin()
+{
+}
+
 uint16_t TestDistanceMeter::get_distance() const
 {
     return _distance;

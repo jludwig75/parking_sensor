@@ -8,6 +8,7 @@ class ParkingSignal
 public:
     ParkingSignal(int red_pin, int green_pin, int blue_pin);
 
+    virtual void begin();
     virtual void on_loop();
 
     enum Closeness {

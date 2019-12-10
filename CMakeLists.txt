@@ -17,6 +17,7 @@ add_executable(parking_sensor_integration_test
                 test/led_bank.cpp
                 test/test_distance_meter.cpp
                 sketch/distance_meter.cpp
+                test/HCSR04.cpp
                 )
 target_include_directories(parking_sensor_integration_test PUBLIC
                            "${PROJECT_SOURCE_DIR}/sketch"
@@ -39,6 +40,7 @@ add_executable(parking_sensor_test
                 test/test_distance_meter.cpp
                 sketch/distance_meter.cpp
                 test/test_range_guide.cpp
+                test/HCSR04.cpp
                 )
 target_include_directories(parking_sensor_test PUBLIC
                            "${PROJECT_SOURCE_DIR}/sketch"

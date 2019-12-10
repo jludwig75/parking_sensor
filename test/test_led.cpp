@@ -9,6 +9,10 @@ SignalLED::SignalLED(int led_pin) :
     LEDBank::instance().set_led_state(_led_pin, LEDBank::Off);
 }
 
+void SignalLED::begin()
+{
+}
+
 void SignalLED::on_loop()
 {
     LEDBank::instance().on_loop(_led_pin);

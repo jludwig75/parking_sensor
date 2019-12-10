@@ -5,9 +5,20 @@ TestParkingSignal::TestParkingSignal(int red_pin, int green_pin, int blue_pin) :
     ParkingSignal(red_pin, green_pin, blue_pin),
     _range_state(OutOfRange),
     _closeness(NoMeasurement),
+    _begin_called(false),
     _loop_count(0)
 {
 
+}
+
+void TestParkingSignal::begin()
+{
+    _begin_called = true;
+}
+
+bool TestParkingSignal::begin_called() const
+{
+    return _begin_called;
 }
 
 void TestParkingSignal::on_loop()

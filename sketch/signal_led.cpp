@@ -6,6 +6,10 @@ SignalLED::SignalLED(int led_pin) :
 {
 }
 
+void SignalLED::begin()
+{
+}
+
 void SignalLED::on_loop()
 {
 }

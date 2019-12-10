@@ -12,6 +12,7 @@ class ParkingSensor
 public:
     ParkingSensor(DistanceMeter *distance_meter, ParkingSignal *parking_signal);
 
+    void begin();
     void on_loop();
 
 private:

@@ -10,6 +10,13 @@ ParkingSignal::ParkingSignal(int red_pin, int green_pin, int blue_pin) :
 
 }
 
+void ParkingSignal::begin()
+{
+    _red_led.begin();
+    _green_led.begin();
+    _blue_led.begin();
+}
+
 void ParkingSignal::on_loop()
 {
     _red_led.on_loop();
