@@ -18,5 +18,6 @@ public:
     void set_led_state(LEDState state);
 
 private:
-    int _led_pin;
+    const int _led_pin;
+    LEDState _state;
 };
