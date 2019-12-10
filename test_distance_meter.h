@@ -3,8 +3,9 @@
 #include "distance_meter.h"
 
 
-class TestDistanceMeter : protected DistanceMeter
+class TestDistanceMeter : public DistanceMeter
 {
+public:
     TestDistanceMeter(int echo_pin, int trigger_pin);
     uint16_t get_distance() const;
     void set_distance(uint16_t distance);

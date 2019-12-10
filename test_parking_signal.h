@@ -13,7 +13,10 @@ public:
     Closeness get_closeness() const;
     RangeState get_range_state() const;
 
+    unsigned get_loop_count() const;
+
 private:
     Closeness _closeness;
     RangeState _range_state;
+    unsigned _loop_count;
 };
