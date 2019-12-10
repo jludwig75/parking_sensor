@@ -23,6 +23,7 @@ ParkingSensor parking_sensor(&distance_meter, &parking_signal);
 
 void setup()
 {
+  Serial.begin(115200);
   connect_to_wifi(WIFI_SSID, WIFI_PASSWD, HOST_NAME);
   ota_setup();
 }

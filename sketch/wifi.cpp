@@ -21,6 +21,12 @@ void connect_to_wifi(const char *ssid, const char *passwd, const char *host_name
     ESP.restart();
   }
 
+  Serial.println("");
+  Serial.print("Connected to ");
+  Serial.println(ssid);
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
+
   if (MDNS.begin(host_name)) {
     Serial.println("MDNS responder started");
   }
