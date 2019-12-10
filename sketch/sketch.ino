@@ -14,6 +14,7 @@
 
 #define WIFI_SSID   ""
 #define WIFI_PASSWD ""
+
 #define HOST_NAME   "parking_sensor.local"
 
 DistanceMeter distance_meter(ECHO_PIN, TRIGGER_PIN);
