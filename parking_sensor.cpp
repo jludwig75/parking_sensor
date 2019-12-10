@@ -5,7 +5,7 @@
 
 
 ParkingSensor::ParkingSensor(DistanceMeter *distance_meter, ParkingSignal *parking_signal) :
-    _range_guide(parking_signal, 1, 2, 3),
+    _range_guide(parking_signal, 150, 5, 30),
     _distance_meter(distance_meter),
     _parking_signal(parking_signal),
     _last_distance(UINT16_MAX)

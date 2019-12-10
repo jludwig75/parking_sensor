@@ -3,3 +3,4 @@
 ./range_guide_test
 ./range_guide_parking_signal_test
 ./parking_sensor_test
+./parking_sensor_integration_test
