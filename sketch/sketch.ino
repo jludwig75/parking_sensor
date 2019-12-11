@@ -8,9 +8,9 @@
 #define ECHO_PIN        D3
 #define TRIGGER_PIN     D4
 
-#define RED_LED_PIN     D6
-#define GREEN_LED_PIN   D7
-#define BLUE_LED_PIN    D8
+#define RED_LED_PIN     12
+#define GREEN_LED_PIN   4
+#define BLUE_LED_PIN    5
 
 #define WIFI_SSID   ""
 #define WIFI_PASSWD ""
