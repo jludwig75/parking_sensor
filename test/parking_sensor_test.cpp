@@ -27,7 +27,7 @@ TEST_CASE( "Parking Sensor effects closeness range", "[ParkingSensor]" ) {
             distance_meter.set_distance(0);
             parking_sensor.on_loop();
             REQUIRE(get_current_distance() == 0);
-            REQUIRE(get_range_updates() == 1);
+            REQUIRE(get_range_updates() == 0);
         }
     }
 
@@ -37,7 +37,7 @@ TEST_CASE( "Parking Sensor effects closeness range", "[ParkingSensor]" ) {
             distance_meter.set_distance(100);
             parking_sensor.on_loop();
             REQUIRE(get_current_distance() == 100);
-            REQUIRE(get_range_updates() == 2);
+            REQUIRE(get_range_updates() == 1);
         }
     }
 
@@ -48,7 +48,7 @@ TEST_CASE( "Parking Sensor effects closeness range", "[ParkingSensor]" ) {
             distance_meter.set_distance(test_distance);
             parking_sensor.on_loop();
             REQUIRE(get_current_distance() == test_distance);
-            REQUIRE(get_range_updates() == 3 + i);
+            REQUIRE(get_range_updates() == 2 + i);
         }
     }
 }
