@@ -2,16 +2,15 @@
 
 
 DistanceMeter::DistanceMeter(int echo_pin, int trigger_pin) :
-    _ultrasonic(trigger_pin, echo_pin)
+    _ultrasonic(trigger_pin, echo_pin, 400)
 {
 }
 
 void DistanceMeter::begin()
 {
-    _ultrasonic.begin();
 }
 
-uint16_t DistanceMeter::get_distance() const
+uint16_t DistanceMeter::get_distance()
 {
-    return _ultrasonic.getMedianFilterDistance();
+    return _ultrasonic.convert_cm(_ultrasonic.ping_median(10));
 }

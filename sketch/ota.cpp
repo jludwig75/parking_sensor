@@ -1,10 +1,13 @@
 #include "ota.h"
 
+#if 1
 #include <ArduinoOTA.h>
 #include <HardwareSerial.h>
+#endif
 
 void ota_setup()
 {
+#if 1
   // Port defaults to 8266
   // ArduinoOTA.setPort(8266);
 
@@ -54,9 +57,12 @@ void ota_setup()
     }
   });
   ArduinoOTA.begin();
+#endif
 }
 
 void ota_on_loop()
 {
+#if 1
   ArduinoOTA.handle();
+#endif
 }

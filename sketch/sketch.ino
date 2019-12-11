@@ -5,12 +5,12 @@
 #include "wifi.h"
 #include "ota.h"
 
-#define ECHO_PIN        1
-#define TRIGGER_PIN     2
+#define ECHO_PIN        D3
+#define TRIGGER_PIN     D4
 
-#define RED_LED_PIN     3
-#define GREEN_LED_PIN   4
-#define BLUE_LED_PIN    5
+#define RED_LED_PIN     D6
+#define GREEN_LED_PIN   D7
+#define BLUE_LED_PIN    D8
 
 #define WIFI_SSID   ""
 #define WIFI_PASSWD ""

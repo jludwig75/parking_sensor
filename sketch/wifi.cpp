@@ -1,11 +1,14 @@
 #include "wifi.h"
 
+#if 1
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h> 
 #include <ESP8266mDNS.h>
+#endif
 
 void connect_to_wifi(const char *ssid, const char *passwd, const char *host_name)
 {
+#if 1
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, passwd);
   Serial.println("");
@@ -30,4 +33,5 @@ void connect_to_wifi(const char *ssid, const char *passwd, const char *host_name
   if (MDNS.begin(host_name)) {
     Serial.println("MDNS responder started");
   }
+#endif
 }

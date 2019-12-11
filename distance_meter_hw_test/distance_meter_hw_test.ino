@@ -2,8 +2,8 @@
 #include "wifi.h"
 #include "ota.h"
 
-#define ECHO_PIN        1
-#define TRIGGER_PIN     2
+#define ECHO_PIN        D3
+#define TRIGGER_PIN     D4
 
 #define WIFI_SSID   ""
 #define WIFI_PASSWD ""
