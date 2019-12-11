@@ -2,9 +2,9 @@
 #include "wifi.h"
 #include "ota.h"
 
-#define RED_LED_PIN     D6
-#define GREEN_LED_PIN   D7
-#define BLUE_LED_PIN    D8
+#define RED_LED_PIN     12
+#define GREEN_LED_PIN   4
+#define BLUE_LED_PIN    5
 
 #define WIFI_SSID   ""
 #define WIFI_PASSWD ""
@@ -48,10 +48,15 @@ void loop()
 {
   ota_on_loop();
   red_led.on_loop();
+  green_led.on_loop();
+  blue_led.on_loop();
   unsigned global_test_number = (millis() / (STATE_TEST_DURATION_SEC * 1000)) % NUM_TESTS;
 
   if (global_test_number != current_global_test_number)
   {
+    red_led.set_led_state(SignalLED::Off);
+    green_led.set_led_state(SignalLED::Off);
+    blue_led.set_led_state(SignalLED::Off);
     current_global_test_number = global_test_number;
     unsigned led_number = global_test_number / NUM_TESTS_PER_LED;
     unsigned test_number = global_test_number % NUM_TESTS_PER_LED;
